@@ -1,4 +1,8 @@
-
+import os
+import re
+import subprocess
+import time
+import datetime
 
 """
 This file contains all the cmun function and Params for the Cardano cli
@@ -10,8 +14,9 @@ def configParms():
    network="--testnet-magic 42 "
    Shelly_CLI = "cardano-cli shelley "
    reslist = []
-   reslist.append(network,Shelly_CLI)
-   retrun reslist
+   reslist.append(Shelly_CLI)
+   reslist.append(network)
+   return reslist
 
 
 #function to send simple CMD to the bash
@@ -44,3 +49,9 @@ def protocolParms(Network):
     cmd= parms[0]+"query protocol-parameters "+parms[0]+" "+outFile
     sendCmdtoShell(cmd)
     print ("Parm  File Created : " + fileName)
+
+#funcotion will create a directory if it does not exisit
+def Mkdir(_name):
+    cmd  = "mkdir " + _name
+    cmd1 = sendCmdtoShell("ls -al")
+    print(cmd1)
