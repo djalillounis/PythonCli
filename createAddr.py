@@ -31,8 +31,8 @@ def createPayAddr (_name):
             sendCmdtoShell(cmd)
             print("--------------------------------------------")
             print("Address created " +addrFile)
-            Hexa = sendCmdtoShell("cat "+ addrFile)
-            
+            Hexa = sendCmdtoShell("cat "+ addrFile + "\n")
+
             print(addr)
 
             print("--------------------------------------------")
