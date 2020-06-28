@@ -3,7 +3,7 @@ import re
 import subprocess
 import time
 import datetime
-from SendTransaction import sendCmdtoShell,snedCmdtoSell_testing
+from config import sendCmdtoShell,snedCmdtoSell_testing
 
 #cardano-cli shelley address key-gen \
 #--verification-key-file payment.vkey \
@@ -42,6 +42,3 @@ def createAdres(_name,type,network):
     print(addr)
 
     print("--------------------------------------------")
-
-network="--testnet-magic 42 "
-createAdres("Djalil","normal",network)
