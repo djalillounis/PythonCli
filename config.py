@@ -63,7 +63,7 @@ def Mkdir(_name):
 
         if item == _name:
             exist = True
-            print("Walletal ready exisit")
+
             break
         else:
             exist = False
@@ -71,7 +71,7 @@ def Mkdir(_name):
 
 
     if exist==False:
-        print("Direcotry created")
+
         res = sendCmdtoShell(cmd)
         Created = True
     return Created
