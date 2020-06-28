@@ -1,10 +1,10 @@
 from setuptools import setup
 setup(
-    name = 'Py-cli',
+    name = 'Pycli',
     version = '0.1.0',
-    packages = ['Py-cli'],
+    packages = ['Pycli'],
     entry_points = {
         'console_scripts': [
-            'Py-cli = Py-cli.__main__:main'
+            'Pycli = Pycli.__main__:main'
         ]
     })
