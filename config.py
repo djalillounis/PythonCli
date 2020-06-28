@@ -28,6 +28,7 @@ def sendCmdtoShell(cmd):
 
     result = subprocess.run([cmd], stdout=subprocess.PIPE,shell=True)
     res = result.stdout
+    res = res.decode('utf-8')
 
     return res
 
@@ -53,5 +54,24 @@ def protocolParms(Network):
 #funcotion will create a directory if it does not exisit
 def Mkdir(_name):
     cmd  = "mkdir " + _name
-    cmd1 = sendCmdtoShell("ls -al")
-    print(cmd1)
+    cmd1 = sendCmdtoShell("ls -l | grep '^d' | awk '{print $9}'")
+    cmd1 = cmd1.split("\n")
+    exist = True
+    Created = False
+
+    for item in cmd1:
+
+        if item == _name:
+            exist = True
+            print("Walletal ready exisit")
+            break
+        else:
+            exist = False
+
+
+
+    if exist==False:
+        print("Direcotry created")
+        res = sendCmdtoShell(cmd)
+        Created = True
+    return Created
